@@ -167,7 +167,7 @@ nav {
         display: none;
       }
 
-      h1 {
+      h2 {
         font-size: 24px;
         text-align: center;
         margin-bottom: 20px;
@@ -231,6 +231,7 @@ nav {
 
 .menu {
   display: none;
+  overflow: hidden;
   background-image: url("../images/menu_img.jpg");
   background-size: cover;
   background-position: 50%;
