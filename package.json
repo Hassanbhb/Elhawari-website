@@ -1,0 +1,21 @@
+{
+  "name": "elhawari-project2",
+  "version": "1.0.0",
+  "description": "A website for a small business, displaying the menu and location of the business",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Hassan ben haj bouih",
+  "license": "ISC",
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "sass": "^1.25.0"
+  },
+  "dependencies": {
+    "@dogstudio/highway": "^2.1.3",
+    "gsap": "^3.2.0",
+    "quick": "0.0.6"
+  }
+}

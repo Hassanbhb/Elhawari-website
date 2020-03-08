@@ -1,0 +1,395 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.125em;
+}
+
+// navigation css
+nav {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  width: 100vw;
+  height: 10vh;
+  background-color: #fff;
+
+  .nav-list {
+    height: inherit;
+    list-style: none;
+    display: flex;
+
+    li {
+      flex-grow: 1;
+      text-align: center;
+      height: inherit;
+
+      .nav-links {
+        display: flex;
+        height: inherit;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+
+        p {
+          display: none;
+        }
+
+        svg {
+          height: 25px;
+        }
+      }
+
+      svg.logo {
+        height: 9vh;
+      }
+    }
+  }
+}
+
+// shared css
+.home,
+.location,
+.menu {
+  height: 90vh;
+  position: absolute;
+  width: 100%;
+}
+
+// home content css
+.home-content {
+  height: 100%;
+
+  .home-presentation {
+    color: #fff;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: 300;
+      padding: 5px;
+      text-align: center;
+
+      &:last-of-type {
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+// location content css
+.location-content {
+  height: 100%;
+
+  .location-presentation {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    height: inherit;
+
+    .iframe {
+      height: 200px;
+      iframe {
+        height: inherit;
+        width: 100%;
+      }
+    }
+
+    .location-data {
+      display: flex;
+      flex-direction: column;
+      color: #000;
+      padding: 20px;
+
+      h2 {
+        margin-top: 10px;
+      }
+
+      p {
+        margin-top: 5px;
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.menu-content {
+  height: 100%;
+
+  .menu-presentation {
+    height: inherit;
+    padding: 0 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.294);
+    overflow: scroll;
+
+    .menu_menu {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr 1fr;
+      padding-top: 10px;
+
+      button {
+        border: none;
+        padding: 10px 5px;
+        background-color: transparent;
+        color: #fff;
+
+        &.active_btn {
+          font-weight: bold;
+          border-bottom: 1px solid #fff;
+        }
+      }
+    }
+
+    section {
+      margin: 20px 0;
+
+      &.sandwiches,
+      &.plats,
+      &.burgers,
+      &.chikas,
+      &.tacos,
+      &.paninis,
+      &.salades {
+        display: none;
+      }
+
+      h1 {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+
+        span {
+          font-size: 15px;
+          font-weight: 300;
+        }
+      }
+
+      div {
+        display: grid;
+        grid-template-columns: 5fr 1fr;
+        grid-template-areas:
+          "name price"
+          "ingredients price";
+        padding-top: 5px;
+
+        .dish_name {
+          grid-area: name;
+          font-size: 15px;
+        }
+
+        .ingredients {
+          grid-area: ingredients;
+          font-size: 10px;
+          padding-left: 10px;
+          font-weight: 300;
+        }
+
+        .prices {
+          grid-area: price;
+          align-self: center;
+          font-size: 10px;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          row-gap: 1px;
+          column-gap: 3px;
+
+          span {
+            justify-self: center;
+            align-self: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+// backgrounds
+.home {
+  background-image: url("../images/home_img.jpg");
+  background-size: cover;
+  background-position: 80%;
+}
+
+.location {
+  background-color: #fff;
+}
+
+.menu {
+  background-image: url("../images/menu_img.jpg");
+  background-size: cover;
+  background-position: 50%;
+}
+
+@media screen and (min-width: 600px) and (max-width: 650px) {
+  .home-content .home-presentation {
+    height: 100%;
+
+    p {
+      font-weight: normal;
+      background-color: rgba(0, 0, 0, 0.246);
+    }
+  }
+
+  .location-content .location-presentation {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    .iframe {
+      align-self: center;
+      height: 100%;
+    }
+
+    .location-data {
+      align-self: center;
+    }
+  }
+
+  .menu-content .menu-presentation {
+    .menu_menu {
+      width: 85%;
+      margin: 0 auto;
+    }
+    section {
+      width: 85%;
+      margin: 5px auto;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  nav {
+    bottom: 90vh;
+    background-color: transparent;
+
+    .nav-list li .nav-links {
+      &.is-active p {
+        border-bottom: 1px solid #fff;
+      }
+
+      p {
+        padding: 5px;
+        display: block;
+        color: #fff;
+      }
+
+      svg {
+        display: none;
+      }
+    }
+
+    svg.logo {
+      path#PIZZA_SNACK {
+        fill: #fff;
+      }
+    }
+  }
+
+  .home,
+  .location,
+  .menu {
+    height: 100vh;
+    padding-top: 10vh;
+  }
+
+  .home-content .home-presentation {
+    h1 {
+      font-size: 40px;
+      font-weight: 300;
+    }
+
+    p {
+      font-size: 25px;
+
+      &:last-of-type {
+        font-size: 20px;
+
+        span {
+          font-weight: bold;
+          color: #ff3a3a;
+        }
+      }
+    }
+  }
+
+  .location-content .location-presentation {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    .iframe {
+      height: 500px;
+      justify-self: center;
+      align-self: center;
+
+      iframe {
+        width: 500px;
+      }
+    }
+    .location-data {
+      color: #fff;
+      justify-self: center;
+      align-self: center;
+    }
+  }
+
+  .menu-content .menu-presentation {
+    overflow: hidden;
+    width: 86%;
+    background-color: transparent;
+    margin: 0 auto;
+
+    .menu_menu {
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: 1fr;
+
+      button {
+        cursor: pointer;
+      }
+    }
+
+    section {
+      border: 1px solid rgb(180, 180, 180);
+      border-radius: 5px;
+      padding: 20px;
+
+      h1 {
+        margin-bottom: 0;
+      }
+      div {
+        width: 80%;
+        margin: 5px auto;
+
+        .dish_name {
+          font-size: 18px;
+        }
+
+        .ingredients {
+          font-size: 15px;
+          padding-left: 10px;
+          font-weight: 300;
+        }
+
+        .prices {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  // backgrounds
+  .location {
+    background-color: rgb(22, 22, 22);
+  }
+}
