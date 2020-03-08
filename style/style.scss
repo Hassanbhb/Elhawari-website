@@ -100,6 +100,7 @@ nav {
 
     .iframe {
       height: 200px;
+
       iframe {
         height: inherit;
         width: 100%;
@@ -224,10 +225,12 @@ nav {
 }
 
 .location {
+  display: none;
   background-color: #fff;
 }
 
 .menu {
+  display: none;
   background-image: url("../images/menu_img.jpg");
   background-size: cover;
   background-position: 50%;
@@ -262,6 +265,7 @@ nav {
       width: 85%;
       margin: 0 auto;
     }
+
     section {
       width: 85%;
       margin: 5px auto;
@@ -337,6 +341,7 @@ nav {
         width: 500px;
       }
     }
+
     .location-data {
       color: #fff;
       justify-self: center;
@@ -367,6 +372,7 @@ nav {
       h1 {
         margin-bottom: 0;
       }
+
       div {
         width: 80%;
         margin: 5px auto;
