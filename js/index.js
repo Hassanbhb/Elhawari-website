@@ -22,17 +22,38 @@ function transition(active_section) {
   );
   // if page is location page hide the other two same logic for the other two pages
   if (Array.from(active_section.classList).includes("location_link")) {
-    gsap.fromTo(".location", { opacity: 0 }, { opacity: 1, display: "block" });
-    gsap.fromTo(".home", { opacity: 1 }, { opacity: 0, display: "none" });
-    gsap.fromTo(".menu", { opacity: 1 }, { opacity: 0, display: "none" });
+    gsap.fromTo(
+      ".location",
+      { opacity: 0, visibility: "hidden" },
+      { opacity: 1, visibility: "visible" }
+    );
+    gsap.fromTo(
+      ".home, .menu",
+      { opacity: 1, visibility: "visible" },
+      { opacity: 0, visibility: "hidden" }
+    );
   } else if (Array.from(active_section.classList).includes("home_link")) {
-    gsap.fromTo(".home", { opacity: 0 }, { opacity: 1, display: "block" });
-    gsap.fromTo(".location", { opacity: 1 }, { opacity: 0, display: "none" });
-    gsap.fromTo(".menu", { opacity: 1 }, { opacity: 0, display: "none" });
+    gsap.fromTo(
+      ".home",
+      { opacity: 0, visibility: "hidden" },
+      { opacity: 1, visibility: "visible" }
+    );
+    gsap.fromTo(
+      ".location, .menu",
+      { opacity: 1, visibility: "visible" },
+      { opacity: 0, visibility: "hidden" }
+    );
   } else if (Array.from(active_section.classList).includes("menu_link")) {
-    gsap.fromTo(".menu", { opacity: 0 }, { opacity: 1, display: "block" });
-    gsap.fromTo(".location", { opacity: 1 }, { opacity: 0, display: "none" });
-    gsap.fromTo(".home", { opacity: 1 }, { opacity: 0, display: "none" });
+    gsap.fromTo(
+      ".menu",
+      { opacity: 0, visibility: "hidden" },
+      { opacity: 1, visibility: "visible" }
+    );
+    gsap.fromTo(
+      ".location, .home",
+      { opacity: 1, visibility: "visible" },
+      { opacity: 0, visibility: "hidden" }
+    );
   }
 }
 
@@ -56,7 +77,7 @@ menu_menu_btns.forEach(btn => {
       {
         opacity: 0,
         display: "none",
-        duration: 0.5,
+        duration: 0.2,
         onStart: () => {
           active_btn.classList.remove("active_btn");
           clicked_btn.classList.add("active_btn");
@@ -70,8 +91,8 @@ menu_menu_btns.forEach(btn => {
       {
         opacity: 1,
         display: "block",
-        duration: 0.5,
-        delay: 0.5
+        duration: 0.2,
+        delay: 0.3
       }
     );
   });
