@@ -224,6 +224,7 @@ nav {
 body {
   // this fixes white flash when tansitioning
   background-color: #000;
+  overflow: hidden;
 }
 
 .home {
@@ -287,6 +288,10 @@ body {
     bottom: 90vh;
     background-color: transparent;
 
+    .nav-list li {
+      padding: 5px;
+    }
+
     .nav-list li .nav-links {
       &.is-active p {
         border-bottom: 1px solid #fff;
@@ -314,10 +319,12 @@ body {
   .location,
   .menu {
     height: 100vh;
-    padding-top: 10vh;
+    padding-top: 95px;
   }
 
   .home-content .home-presentation {
+    height: 500px;
+
     h1 {
       font-size: 40px;
       font-weight: 300;
